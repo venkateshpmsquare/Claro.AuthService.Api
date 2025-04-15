@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Claro.AuthService.Api", "Claro.AuthService.Api.csproj", "{DBE79730-59FF-4238-AB7F-3FDC7DB1F1C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Claro.AuthService.Application", "..\Claro.AuthService.Application\Claro.AuthService.Application.csproj", "{DDA17453-D98D-4E09-9206-9CD0C674D280}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Claro.AuthService.Domain", "..\Claro.AuthService.Domain\Claro.AuthService.Domain.csproj", "{031B8CB1-DD77-4213-982C-40B785CB4F22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Claro.AuthService.Infrastructure", "..\Claro.AuthService.Infrastructure\Claro.AuthService.Infrastructure.csproj", "{07F6CDFE-452E-40C4-B2CA-427BE8E63BA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Claro.AuthService.API", "Claro.AuthService.API", "{89FE8171-7C4B-4EA9-97BD-807F09713894}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Claro.AuthService.Application", "Claro.AuthService.Application", "{5ED4CF16-B715-42BD-9D79-0AD244BCECC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Claro.AuthService.Domain", "Claro.AuthService.Domain", "{F3FD793F-5ED9-4D89-AB24-3F747716087A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Claro.AuthService.Infrastructure", "Claro.AuthService.Infrastructure", "{ADEC8609-AD0D-47E0-9C9E-BB5093781A6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Claro.Auth.Tests", "Claro.Auth.Tests", "{20505FA1-12EA-47B3-8119-73E50552F066}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		gitignore.txt = gitignore.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBE79730-59FF-4238-AB7F-3FDC7DB1F1C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBE79730-59FF-4238-AB7F-3FDC7DB1F1C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBE79730-59FF-4238-AB7F-3FDC7DB1F1C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBE79730-59FF-4238-AB7F-3FDC7DB1F1C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDA17453-D98D-4E09-9206-9CD0C674D280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA17453-D98D-4E09-9206-9CD0C674D280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA17453-D98D-4E09-9206-9CD0C674D280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA17453-D98D-4E09-9206-9CD0C674D280}.Release|Any CPU.Build.0 = Release|Any CPU
+		{031B8CB1-DD77-4213-982C-40B785CB4F22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{031B8CB1-DD77-4213-982C-40B785CB4F22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{031B8CB1-DD77-4213-982C-40B785CB4F22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{031B8CB1-DD77-4213-982C-40B785CB4F22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07F6CDFE-452E-40C4-B2CA-427BE8E63BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07F6CDFE-452E-40C4-B2CA-427BE8E63BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07F6CDFE-452E-40C4-B2CA-427BE8E63BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07F6CDFE-452E-40C4-B2CA-427BE8E63BA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DBE79730-59FF-4238-AB7F-3FDC7DB1F1C7} = {89FE8171-7C4B-4EA9-97BD-807F09713894}
+		{DDA17453-D98D-4E09-9206-9CD0C674D280} = {5ED4CF16-B715-42BD-9D79-0AD244BCECC3}
+		{031B8CB1-DD77-4213-982C-40B785CB4F22} = {F3FD793F-5ED9-4D89-AB24-3F747716087A}
+		{07F6CDFE-452E-40C4-B2CA-427BE8E63BA0} = {ADEC8609-AD0D-47E0-9C9E-BB5093781A6D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEBAA95F-E070-4BAC-B4B1-220909CF3057}
+	EndGlobalSection
+EndGlobal
