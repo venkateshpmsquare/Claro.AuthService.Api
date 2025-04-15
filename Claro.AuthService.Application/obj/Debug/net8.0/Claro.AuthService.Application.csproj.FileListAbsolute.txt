@@ -1,0 +1,15 @@
+C:\Users\91960\source\repos\claro\Claro.AuthService.Application\bin\Debug\net8.0\Claro.AuthService.Application.deps.json
+C:\Users\91960\source\repos\claro\Claro.AuthService.Application\bin\Debug\net8.0\Claro.AuthService.Application.dll
+C:\Users\91960\source\repos\claro\Claro.AuthService.Application\bin\Debug\net8.0\Claro.AuthService.Application.pdb
+C:\Users\91960\source\repos\claro\Claro.AuthService.Application\bin\Debug\net8.0\Claro.AuthService.Domain.dll
+C:\Users\91960\source\repos\claro\Claro.AuthService.Application\bin\Debug\net8.0\Claro.AuthService.Domain.pdb
+C:\Users\91960\source\repos\claro\Claro.AuthService.Application\obj\Debug\net8.0\Claro.AuthService.Application.csproj.AssemblyReference.cache
+C:\Users\91960\source\repos\claro\Claro.AuthService.Application\obj\Debug\net8.0\Claro.AuthService.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\91960\source\repos\claro\Claro.AuthService.Application\obj\Debug\net8.0\Claro.AuthService.Application.AssemblyInfoInputs.cache
+C:\Users\91960\source\repos\claro\Claro.AuthService.Application\obj\Debug\net8.0\Claro.AuthService.Application.AssemblyInfo.cs
+C:\Users\91960\source\repos\claro\Claro.AuthService.Application\obj\Debug\net8.0\Claro.AuthService.Application.csproj.CoreCompileInputs.cache
+C:\Users\91960\source\repos\claro\Claro.AuthService.Application\obj\Debug\net8.0\Claro.Au.250AD5C8.Up2Date
+C:\Users\91960\source\repos\claro\Claro.AuthService.Application\obj\Debug\net8.0\Claro.AuthService.Application.dll
+C:\Users\91960\source\repos\claro\Claro.AuthService.Application\obj\Debug\net8.0\refint\Claro.AuthService.Application.dll
+C:\Users\91960\source\repos\claro\Claro.AuthService.Application\obj\Debug\net8.0\Claro.AuthService.Application.pdb
+C:\Users\91960\source\repos\claro\Claro.AuthService.Application\obj\Debug\net8.0\ref\Claro.AuthService.Application.dll
