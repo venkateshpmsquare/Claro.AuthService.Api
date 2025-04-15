@@ -1,0 +1,31 @@
+# Build results
+bin/
+obj/
+out/
+TestResults/
+
+# VS & User-specific files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ASP.NET specific
+wwwroot/lib/
+
+# Secrets & settings
+secrets.json
+appsettings*.json
+
+# Publish results
+publish/
+*.publishsettings
+
+# Rider
+.idea/
+
+# Logs & temp files
+*.log
+*.tmp
+*.cache
