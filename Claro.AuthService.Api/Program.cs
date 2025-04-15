@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+//builder.Services.AddOpenApi();
 
 //add swagger service
 builder.Services.AddEndpointsApiExplorer();
@@ -90,7 +90,7 @@ app.UseAuthorization();
 //{
 //    app.MapOpenApi();
 //}
-app.MapOpenApi();
+//app.MapOpenApi();
 
 app.UseHttpsRedirection();
 
