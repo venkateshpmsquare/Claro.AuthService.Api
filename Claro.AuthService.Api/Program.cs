@@ -96,7 +96,6 @@ builder.Services.AddScoped<Claro.AuthService.Infrastructure.Interfaces.IUserRepo
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
 
 // Add CORS Policy
 builder.Services.AddCors(options =>
@@ -113,7 +112,7 @@ var app = builder.Build();
 app.UseCors("AllowClaroUI");
 
 app.UseSwagger();
-    app.UseSwaggerUI();
+app.UseSwaggerUI();
 
 app.UseAuthentication();
 app.UseAuthorization();
