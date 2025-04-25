@@ -1,11 +1,14 @@
+using Azure.Identity;
 using Claro.AuthService.Application.Helpers;
 using Claro.AuthService.Application.Interfaces;
 using Claro.AuthService.Application.Services;
+using Claro.AuthService.Domain.Dtos;
 using Claro.AuthService.Infrastructure.Persistence;
 using Claro.AuthService.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -20,14 +23,27 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Add services to the container
-var jwtSettings = builder.Configuration.GetSection("JwtSettings");
-var key = Encoding.ASCII.GetBytes(jwtSettings["Key"]);
+var jwtSettings = builder.Configuration.GetSection("keyVaultSettings_JWT");
+var keyVaultName = jwtSettings["keyVaultName"];
+var kvUri = new Uri($"https://{keyVaultName}.vault.azure.net/");
+builder.Configuration.AddAzureKeyVault(kvUri, new DefaultAzureCredential());
+
+builder.Services.Configure<JwtSettings>(options =>
+{
+    options.Key = builder.Configuration["JwtKey"];
+    options.Issuer = builder.Configuration["JwtIssuer"];
+    options.Audience = builder.Configuration["JwtAudience"];
+    options.ExpiryMinutes = int.Parse(builder.Configuration["JwtExpiryMinutes"]);
+});
 
 // Add Identity services 
 //builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 //                .AddEntityFrameworkStores<ClaroAuthDbContext>()
 //                .AddDefaultTokenProviders();
 
+var jwtKey = Encoding.ASCII.GetBytes(builder.Configuration["JwtKey"]);
+var jwtIssuer = builder.Configuration["JwtIssuer"];
+var jwtAudience = builder.Configuration["JwtAudience"];
 
 
 builder.Services.AddAuthentication(options =>
@@ -43,9 +59,9 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = jwtSettings["Issuer"],
-        ValidAudience = jwtSettings["Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(key)
+        ValidIssuer = jwtIssuer,
+        ValidAudience = jwtAudience,
+        IssuerSigningKey = new SymmetricSecurityKey(jwtKey)
     };
 });
 

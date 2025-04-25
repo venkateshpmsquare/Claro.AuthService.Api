@@ -12,6 +12,6 @@ namespace Claro.AuthService.Application.Interfaces
     {
         Task<LoginResponseModel> AuthenticateAsync(string username, string password);
         Task<User> GetByUsernameAsync(string username);
-        Task AddAsync(User user);
+         Task AddAsync(User user);
     }
 }
