@@ -5,6 +5,7 @@ using Claro.AuthService.Application.Services;
 using Claro.AuthService.Domain.Dtos;
 using Claro.AuthService.Infrastructure.Persistence;
 using Claro.AuthService.Infrastructure.Repositories;
+using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 //builder.Services.AddOpenApi();
+
+// 1. Configure Application Insights
+builder.Services.AddApplicationInsightsTelemetry();
+
+// 2. (Optional but best) Configure ApplicationInsights manually if needed
+builder.Services.Configure<TelemetryConfiguration>(config =>
+{
+    config.ConnectionString = builder.Configuration["ApplicationInsights:ConnectionString"];
+});
 
 //add swagger service
 builder.Services.AddEndpointsApiExplorer();

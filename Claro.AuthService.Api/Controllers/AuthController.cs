@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using Claro.AuthService.Application.Contracts.Authentication;
 using Claro.AuthService.Domain.Entities;
 using Claro.AuthService.Application.Helpers;
+using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.DataContracts;
 namespace Claro.AuthService.Api.Controllers
 {
     [Route("api/auth")]
@@ -13,10 +15,34 @@ namespace Claro.AuthService.Api.Controllers
     {
         private readonly IAuthService _authService;
         private readonly PasswordHasher _passwordHasher;
-        public AuthController(IAuthService authService, PasswordHasher passwordHasher)
+        private readonly TelemetryClient _telemetryClient;
+        public AuthController(IAuthService authService, PasswordHasher passwordHasher, TelemetryClient telemetryClient)
         {
             _authService = authService;
             _passwordHasher = passwordHasher;
+            telemetryClient = telemetryClient;
+        }
+
+        [HttpGet("test-telemetry")]
+        public IActionResult TestTelemetry()
+        {
+            // Track a Custom Event
+            _telemetryClient.TrackEvent("TestTelemetryEvent");
+
+            // Track a Custom Trace
+            _telemetryClient.TrackTrace("This is a test trace from Claro.AuthService.Api", SeverityLevel.Information);
+
+            // Track a Custom Exception
+            try
+            {
+                throw new Exception("This is a test exception for Application Insights.");
+            }
+            catch (Exception ex)
+            {
+                _telemetryClient.TrackException(ex);
+            }
+
+            return Ok("Telemetry sent successfully!");
         }
 
         [HttpPost("register")]
