@@ -34,7 +34,14 @@ builder.Services.AddSwaggerGen();
 
 // Add services to the container
 var jwtSettings = builder.Configuration.GetSection("keyVaultSettings_JWT");
+
 var keyVaultName = jwtSettings["keyVaultName"];
+
+if (string.IsNullOrWhiteSpace(keyVaultName))
+{
+    throw new InvalidOperationException("KeyVault name is not set. Please check your configuration.");
+}
+
 var kvUri = new Uri($"https://{keyVaultName}.vault.azure.net/");
 builder.Configuration.AddAzureKeyVault(kvUri, new DefaultAzureCredential());
 
@@ -122,5 +129,14 @@ app.UseHttpsRedirection();
 
 app.MapControllers();
 
-app.Run();
+try
+{
+    // all your config and service setup
+    app.Run();
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Startup failed: " + ex.Message);
+    throw;
+}
 
